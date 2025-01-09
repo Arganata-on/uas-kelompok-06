@@ -46,6 +46,8 @@ void getDetermine(int matriks[3][3])
         cout << matriks[0][i] << "*(" << matriks[1][(i + 1) % 3] << "." << matriks[2][(i + 2) % 3] << " - " << matriks[1][(i + 2) % 3] << "." << matriks[2][(i + 1) % 3] << ")";
     }
 
-    cout << "\nDeterminan: " << determinan;
+    cout << "\n============\n";
+    cout << "Determinan: " << determinan;
+    cout << "\n============\n";
 }
 void showInvers() {}
