@@ -4,7 +4,7 @@ pemrograman C++. Gunakan Array untuk mempermudah perhitungan */
 #include <iostream>
 using namespace std;
 
-void getDetermine(int matriks[3][3]);
+void getDeterminant(int matriks[3][3]);
 
 void showInvers();
 
@@ -30,12 +30,12 @@ int main()
 
     cout << "============\n";
 
-    getDetermine(matriks);
+    getDeterminant(matriks);
 
     return 0;
 }
 
-void getDetermine(int matriks[3][3])
+void getDeterminant(int matriks[3][3])
 {
     float determinan = 0;
 
