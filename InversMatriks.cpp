@@ -6,6 +6,8 @@ using namespace std;
 
 void getDetermine();
 
+void showInvers();
+
 int main()
 {
     int matriks[][3] = {{4, 2, 8},
@@ -30,3 +32,5 @@ int main()
 }
 
 void getDetermine() {}
+
+void showInvers() {}
