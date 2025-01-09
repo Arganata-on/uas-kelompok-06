@@ -33,11 +33,6 @@ int main()
 void getDetermine(int ukuran, int matriks[3][3])
 {
     float determinan = 0;
-
-    for (int i = 0; i < ukuran; i++)
-    {
-        determinan += (matriks[0][i] * (matriks[1][(i + 1) % ukuran] * matriks[2][(i + 2) % ukuran] - matriks[1][(i + 2) % ukuran] * matriks[2][(i + 1) % ukuran]));
-    }
+    determinan = matriks[0][0] * (matriks[1][1] * matriks[2][2] - matriks[1][2] * matriks[2][1]) - matriks[0][1] * (matriks[1][0] * matriks[2][2] - matriks[1][2] * matriks[2][0]) + matriks[0][2] * (matriks[1][0] * matriks[2][1] - matriks[1][1] * matriks[2][0]);
 }
-
 void showInvers() {}
