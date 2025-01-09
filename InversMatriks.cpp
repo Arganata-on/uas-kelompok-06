@@ -32,7 +32,7 @@ int main()
 
 void getDetermine(int ukuran, int matriks[3][3])
 {
-    float determinan;
+    float determinan = 0;
 
     for (int i = 0; i < ukuran; i++)
     {
