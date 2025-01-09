@@ -4,6 +4,8 @@ pemrograman C++. Gunakan Array untuk mempermudah perhitungan */
 #include <iostream>
 using namespace std;
 
+void getDetermine();
+
 int main()
 {
     int matriks[][3] = {{4, 2, 8},
@@ -14,7 +16,7 @@ int main()
     int kolom = sizeof(matriks[0]) / sizeof(matriks[0][0]);
 
     cout << "Matriks A = \n";
-    
+
     for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
