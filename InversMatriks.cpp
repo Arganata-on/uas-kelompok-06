@@ -16,16 +16,19 @@ int main()
 
     int ukuran = sizeof(matriks) / sizeof(matriks[0]);
 
+    cout << "=============\n";
     cout << "Matriks A = \n";
 
     for (int i = 0; i < ukuran; i++)
     {
         for (int j = 0; j < ukuran; j++)
         {
-            cout << matriks[i][j] << " ";
+            cout << "| " << matriks[i][j] << " ";
         }
-        cout << '\n';
+        cout << "|\n";
     }
+
+    cout << "=============\n";
 
     getDetermine(matriks);
 
@@ -39,10 +42,9 @@ void getDetermine(int matriks[3][3])
     for (int i = 0; i < 3; i++)
     {
         determinan += matriks[0][i] * (matriks[1][(i + 1) % 3] * matriks[2][(i + 2) % 3] - matriks[1][(i + 2) % 3] * matriks[2][(i + 1) % 3]);
-        cout << " ";
-        cout << matriks[0][i] << "*(" << matriks[1][(i + 1) % 3] << "." << matriks[2][(i + 2) % 3] << " - " << matriks[1][(i + 2) % 3] << "." << matriks[2][(i + 1) % 3] << ")";
     }
 
-    cout << "\nDeterminan: " << determinan;
+    cout << "Determinan: " << determinan;
+    cout << "\n=============\n";
 }
 void showInvers() {}
