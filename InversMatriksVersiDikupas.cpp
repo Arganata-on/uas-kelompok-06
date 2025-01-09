@@ -16,16 +16,19 @@ int main()
 
     int ukuran = sizeof(matriks) / sizeof(matriks[0]);
 
+    cout << "============\n";
     cout << "Matriks A = \n";
 
     for (int i = 0; i < ukuran; i++)
     {
         for (int j = 0; j < ukuran; j++)
         {
-            cout << matriks[i][j] << " ";
+            cout << "| " << matriks[i][j] << " ";
         }
-        cout << '\n';
+        cout << "|\n";
     }
+
+    cout << "============\n";
 
     getDetermine(matriks);
 
