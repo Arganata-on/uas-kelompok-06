@@ -5,7 +5,7 @@ pemrograman C++. Gunakan Array untuk mempermudah perhitungan */
 using namespace std;
 
 double menghitungDeterminan(int size, int matriks[3][3]);
-void inverseMatriks(double determinan, int size, int matriks[3][3], double invers[3][3]);
+void inversMatriks(double determinan, int size, int matriks[3][3], double invers[3][3]);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 
     if (determinan != 0)
     {
-        inverseMatriks(determinan, size, matriks, invers);
+        inversMatriks(determinan, size, matriks, invers);
 
         cout << "Invers Matriks:\n";
         cout << "==============================\n";
@@ -69,7 +69,7 @@ double menghitungDeterminan(int size, int matriks[3][3])
     return determinan;
 }
 
-void inverseMatriks(double determinan, int size, int matriks[3][3], double invers[3][3])
+void inversMatriks(double determinan, int size, int matriks[3][3], double invers[3][3])
 {
     invers[0][0] = (matriks[1][1] * matriks[2][2] - matriks[2][1] * matriks[1][2]) / determinan;
     invers[0][1] = -(matriks[0][1] * matriks[2][2] - matriks[2][1] * matriks[0][2]) / determinan;
