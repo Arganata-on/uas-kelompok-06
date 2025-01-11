@@ -13,15 +13,18 @@ int main()
     int size = sizeof(matriks) / sizeof(matriks[0]);
     double invers[3][3];
 
-    cout << "Matriks:\n";
+    cout << "============\n";
+    cout << "Matriks A:\n";
+    cout << "============\n";
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
         {
-            cout << matriks[i][j] << " ";
+            cout << "| " << matriks[i][j] << " ";
         }
-        cout << '\n';
+        cout << "|\n";
     }
+    cout << "============\n";
 
     double determinan = menghitungDeterminan(size, matriks);
     if (determinan != 0)
@@ -33,9 +36,9 @@ int main()
         {
             for (int j = 0; j < size; j++)
             {
-                cout << invers[i][j] << " ";
+                cout << "| " << invers[i][j] << " ";
             }
-            cout << '\n';
+            cout << "|\n";
         }
     }
     else
