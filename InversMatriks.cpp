@@ -1,50 +1,71 @@
-/* Dari matrik ber-ordo 3x3 berikut lakukanlah invers dengan menggunakan bahasa
-pemrograman C++. Gunakan Array untuk mempermudah perhitungan */
-
 #include <iostream>
 using namespace std;
 
-void getDeterminant(int matriks[3][3]);
-
-void showInvers();
+double menghitungDeterminan(int size, int matriks[3][3]);
+void inverseMatriks(double determinan, int size, int matriks[3][3], double invers[3][3]);
 
 int main()
 {
-    int matriks[3][3] = {{4, 2, 8},
-                         {2, 1, 5},
-                         {3, 2, 4}};
+    int matriks[3][3] = {{1, 0, 2},
+                         {2, 2, 1},
+                         {3, 1, 4}};
 
-    int ukuran = sizeof(matriks) / sizeof(matriks[0]);
+    int size = sizeof(matriks) / sizeof(matriks[0]);
+    double invers[3][3];
 
-    cout << "=============\n";
-    cout << "Matriks A = \n";
-
-    for (int i = 0; i < ukuran; i++)
+    cout << "Matriks:\n";
+    for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < ukuran; j++)
+        for (int j = 0; j < size; j++)
         {
-            cout << "| " << matriks[i][j] << " ";
+            cout << matriks[i][j] << " ";
         }
-        cout << "|\n";
+        cout << '\n';
     }
 
-    cout << "=============\n";
+    double determinan = menghitungDeterminan(size, matriks);
+    if (determinan != 0)
+    {
+        inverseMatriks(determinan, size, matriks, invers);
 
-    getDeterminant(matriks);
+        cout << "\nInvers Matriks:\n";
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                cout << invers[i][j] << " ";
+            }
+            cout << '\n';
+        }
+    }
+    else
+    {
+        cout << "\nMatriks tidak memiliki invers karena determinannya nol.\n";
+    }
 
     return 0;
 }
 
-void getDeterminant(int matriks[3][3])
+double menghitungDeterminan(int size, int matriks[3][3])
 {
-    float determinan = 0;
-
-    for (int i = 0; i < 3; i++)
+    double determinan = 0;
+    for (int i = 0; i < size; i++)
     {
         determinan += matriks[0][i] * (matriks[1][(i + 1) % 3] * matriks[2][(i + 2) % 3] - matriks[1][(i + 2) % 3] * matriks[2][(i + 1) % 3]);
     }
-
-    cout << "Determinan: " << determinan;
-    cout << "\n=============\n";
+    cout << "Determinan: " << determinan << '\n';
+    return determinan;
 }
-void showInvers() {}
+
+void inverseMatriks(double determinan, int size, int matriks[3][3], double invers[3][3])
+{
+    invers[0][0] = (matriks[1][1] * matriks[2][2] - matriks[2][1] * matriks[1][2]) / determinan;
+    invers[0][1] = -(matriks[0][1] * matriks[2][2] - matriks[2][1] * matriks[0][2]) / determinan;
+    invers[0][2] = (matriks[0][1] * matriks[1][2] - matriks[1][1] * matriks[0][2]) / determinan;
+    invers[1][0] = -(matriks[1][0] * matriks[2][2] - matriks[2][0] * matriks[1][2]) / determinan;
+    invers[1][1] = (matriks[0][0] * matriks[2][2] - matriks[2][0] * matriks[0][2]) / determinan;
+    invers[1][2] = -(matriks[0][0] * matriks[1][2] - matriks[1][0] * matriks[0][2]) / determinan;
+    invers[2][0] = (matriks[1][0] * matriks[2][1] - matriks[2][0] * matriks[1][1]) / determinan;
+    invers[2][1] = -(matriks[0][0] * matriks[2][1] - matriks[2][0] * matriks[0][1]) / determinan;
+    invers[2][2] = (matriks[0][0] * matriks[1][1] - matriks[1][0] * matriks[0][1]) / determinan;
+}
