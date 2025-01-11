@@ -16,9 +16,9 @@ int main()
     int size = sizeof(matriks) / sizeof(matriks[0]);
     double invers[3][3];
 
-    cout << "============\n";
+    cout << "==============================\n";
     cout << "Matriks A:\n";
-    cout << "============\n";
+    cout << "==============================\n";
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
@@ -27,14 +27,19 @@ int main()
         }
         cout << "|\n";
     }
-    cout << "============\n";
+    cout << "==============================\n";
 
     double determinan = menghitungDeterminan(size, matriks);
+
+    cout << "==============================\n";
+
     if (determinan != 0)
     {
         inverseMatriks(determinan, size, matriks, invers);
 
-        cout << "\nInvers Matriks:\n";
+        cout << "Invers Matriks:\n";
+        cout << "==============================\n";
+
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
@@ -43,10 +48,11 @@ int main()
             }
             cout << "|\n";
         }
+        cout << "==============================\n";
     }
     else
     {
-        cout << "\nMatriks tidak memiliki invers karena determinannya nol.\n";
+        cout << "Matriks tidak memiliki invers karena determinannya bernilai nol.\n";
     }
 
     return 0;
