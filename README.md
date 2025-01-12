@@ -1,4 +1,4 @@
-# 📝 UAS Pemrograman Dasar 2024 - Kelompok 06
+#  🚀 UAS Pemrograman Dasar 2024 - Kelompok 06
 - 🤖**HANDIKA RADO ARGANΑΤΑ** - 24104410051
 - 🤖**DIMAS SURYA WISMOADY** - 24104410061
 - 🤖**ILHAM AGUSTIANO HANEADI** - 24104410085
