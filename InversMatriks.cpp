@@ -8,9 +8,9 @@ void menghitungInvers(int ukuran, int determinan, int transpose[3][3]);
 
 int main()
 {
-    int matriks[3][3] = {{1, 2, 3},
-                         {4, 5, 6},
-                         {7, 8, 9}};
+    int matriks[3][3] = {{4, 2, 8},
+                         {2, 1, 5},
+                         {3, 2, 4}};
 
     int ukuran = sizeof(matriks) / sizeof(matriks[0]);
 
