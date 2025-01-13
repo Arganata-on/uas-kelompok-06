@@ -68,7 +68,7 @@ void menghitungMedian(int nilai[], int ukuran)
 
 void menghitungStandarDeviasi(int ukuran, int nilai[], int mean)
 {
-    double hasil, variansi;
+    double hasil = 0, variansi = 0;
 
     for (int i = 0; i < ukuran; i++)
     {
